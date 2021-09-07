@@ -1,0 +1,15 @@
+{
+  "name": "@antoni0o/gdrive-webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx http-server public"
+  },
+  "keywords": [],
+  "author": "antoni0o",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
