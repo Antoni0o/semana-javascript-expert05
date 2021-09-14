@@ -1,7 +1,6 @@
 import { jest } from "@jest/globals";
 import fs from "fs";
 import FileHelper from "../../src/fileHelper.js";
-import Routes from "../../src/routes.js";
 
 describe("#File Helper", () => {
   describe("#getFileStatus", () => {
@@ -30,16 +29,16 @@ describe("#File Helper", () => {
       const mockUser = "antonio";
       process.env.USER = mockUser;
       const filename = "file.png";
-      
+
       jest
         .spyOn(fs.promises, fs.promises.readdir.name)
-        .mockResolvedValue([ filename ]);
+        .mockResolvedValue([filename]);
 
       jest
         .spyOn(fs.promises, fs.promises.stat.name)
         .mockResolvedValue(statMock);
-      
-      const result = await FileHelper.getFileStatus('/tmp')
+
+      const result = await FileHelper.getFileStatus("/tmp");
 
       const expectedResult = [
         {
@@ -50,8 +49,8 @@ describe("#File Helper", () => {
         },
       ];
 
-      expect(fs.promises.stat).toHaveBeenCalledWith(`/tmp/${filename}`)
-      expect(result).toMatchObject(expectedResult)
+      expect(fs.promises.stat).toHaveBeenCalledWith(`/tmp/${filename}`);
+      expect(result).toMatchObject(expectedResult);
     });
   });
 });

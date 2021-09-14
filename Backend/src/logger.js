@@ -1,10 +1,8 @@
-import pino from 'pino'
+import pino from "pino";
 const logger = pino({
   prettyPrint: {
-    ignore: 'pid, hostname'
-  }
-})
+    ignore: "pid, hostname",
+  },
+});
 
-export {
-  logger
-}
+export { logger };
